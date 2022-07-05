@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: .
+command: python query_sql_example.py
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-cuda11.1-cudnn8-ubuntu20.04:latest
+  conda_file: conda.yml
+compute: azureml:gpu-cluster
+environment_variables:
+  SQL_SERVER: fidge-aml-sql-spike-server.database.windows.net
+  SQL_DATABASE: AdventureWorksLT

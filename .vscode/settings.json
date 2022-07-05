@@ -1,0 +1,12 @@
+{
+    "python.formatting.provider": "black",
+    "editor.rulers": [
+        {
+            "column": 120,
+            "color": "#333333"
+        }
+    ],
+    "python.formatting.blackArgs": [
+        "--line-length=120"
+    ]
+}

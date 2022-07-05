@@ -1,0 +1,11 @@
+name: sql-from-aml-cc
+channels:
+  - conda-forge
+dependencies:
+    - python=3.8
+    - pip
+    - cudatoolkit=11.1
+    - unixodbc
+    - pyodbc
+    - pip:
+      - azureml-defaults
