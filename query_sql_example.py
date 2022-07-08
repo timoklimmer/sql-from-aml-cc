@@ -18,7 +18,7 @@ print(f"Database: {database}")
 print(f"")
 
 
-def azure_sql_connection(server, database):
+def pyodbc_azure_sql_connection(server, database):
     """Return a connected PyODBC connection to an Azure SQL instance."""
     SQL_COPT_SS_ACCESS_TOKEN = 1256
     credential: TokenCredential = ChainedTokenCredential(
@@ -30,7 +30,7 @@ def azure_sql_connection(server, database):
     return pyodbc.connect(connString, attrs_before={SQL_COPT_SS_ACCESS_TOKEN: token_struct})
 
 
-with azure_sql_connection(server, database) as sql_conn:
+with pyodbc_azure_sql_connection(server, database) as sql_conn:
     cursor = sql_conn.cursor()
     user_name = cursor.execute("SELECT ORIGINAL_LOGIN()").fetchone()[0]
 
