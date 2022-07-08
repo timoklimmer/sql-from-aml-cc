@@ -19,7 +19,7 @@ To make this work, you need to fulfill several prerequisites.
   not work, try using the pyodbc package from conda.
 
 
-## 2. Ensure you have an Azure SQL instance** (managed instance should work, too)
+## 2. Ensure you have an Azure SQL instance** (Managed Instance should work, too, but hasn't been tested yet)
 
 - network access enabled between the AML Compute Cluster and the Azure SQL MI instance
     * either using public endpoint (incl. usage of public endpoint network address then) or

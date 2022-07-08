@@ -7,5 +7,5 @@ environment:
   conda_file: conda.yml
 compute: azureml:gpu-cluster
 environment_variables:
-  SQL_SERVER: fidge-aml-sql-spike-server.database.windows.net
-  SQL_DATABASE: AdventureWorksLT
+  SQL_SERVER: <your server name here>.database.windows.net
+  SQL_DATABASE: <your database name here>
