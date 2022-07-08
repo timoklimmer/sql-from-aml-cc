@@ -26,8 +26,8 @@ def pyodbc_azure_sql_connection(server, database):
     )
     token = credential.get_token("https://database.windows.net/.default").token.encode("UTF-16-LE")
     token_struct = struct.pack(f"<I{len(token)}s", len(token), token)
-    connString = f"Driver={{ODBC Driver 17 for SQL Server}};Server={server};Database={database}"
-    return pyodbc.connect(connString, attrs_before={SQL_COPT_SS_ACCESS_TOKEN: token_struct})
+    connection_string = f"Driver={{ODBC Driver 17 for SQL Server}};Server={server};Database={database}"
+    return pyodbc.connect(connection_string, attrs_before={SQL_COPT_SS_ACCESS_TOKEN: token_struct})
 
 
 with pyodbc_azure_sql_connection(server, database) as sql_conn:
